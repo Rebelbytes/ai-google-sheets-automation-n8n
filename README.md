@@ -27,7 +27,7 @@ Searching spreadsheets manually for customer or order information can be repetit
 
 ### 1. ⚙️ n8n Workflow
 
-![n8n Workflow](n8n Workflow.jpeg)
+![n8n Workflow](n8nWorkflow.jpeg)
 
 ### 2. ✅ Working Result
 
