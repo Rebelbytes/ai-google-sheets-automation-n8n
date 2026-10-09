@@ -1,0 +1,282 @@
+{
+  "name": "Google sheet integration",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "314daa2e-4239-4d38-9d36-753f0213dd69",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        -304,
+        0
+      ],
+      "webhookId": "52765ebf-c1a4-4d0f-a49c-c31147dff396"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a helpful assistant"
+        }
+      },
+      "id": "b448e0c8-c626-4314-8400-dba0b611c3ed",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -112,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "c5ad5252-ff81-4b81-a7d4-b89d880e6d5d",
+      "name": "Google Gemini Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        -224,
+        192
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": null,
+          "name": "Gateway credits",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "5ee25d32-d6a4-403c-aac3-c2fad5117e2e",
+      "name": "Simple Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        -96,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1AH_WzQSyy90pJRGoZHrk8RP5KUUCHdTkfmvEMvA7IUo/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 968110838,
+          "mode": "list",
+          "cachedResultName": "Class Data",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1AH_WzQSyy90pJRGoZHrk8RP5KUUCHdTkfmvEMvA7IUo/edit#gid=968110838"
+        },
+        "options": {}
+      },
+      "id": "4c17b7af-7e15-45e3-af79-7cad94771f0e",
+      "name": "Class info",
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        48,
+        192
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4OD3d5vG4K5VPAAZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1AH_WzQSyy90pJRGoZHrk8RP5KUUCHdTkfmvEMvA7IUo/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 352540417,
+          "mode": "list",
+          "cachedResultName": "Major",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1AH_WzQSyy90pJRGoZHrk8RP5KUUCHdTkfmvEMvA7IUo/edit#gid=352540417"
+        },
+        "options": {}
+      },
+      "id": "4ec71dd0-66fc-473b-b758-9494b8d98b6b",
+      "name": "Major",
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        160,
+        192
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4OD3d5vG4K5VPAAZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1AH_WzQSyy90pJRGoZHrk8RP5KUUCHdTkfmvEMvA7IUo/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2025273366,
+          "mode": "list",
+          "cachedResultName": "State",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1AH_WzQSyy90pJRGoZHrk8RP5KUUCHdTkfmvEMvA7IUo/edit#gid=2025273366"
+        },
+        "options": {}
+      },
+      "id": "eb2b4414-b40b-453a-bb12-4d722598d082",
+      "name": "State",
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        272,
+        192
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4OD3d5vG4K5VPAAZ",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1AH_WzQSyy90pJRGoZHrk8RP5KUUCHdTkfmvEMvA7IUo/edit?usp=sharing",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1257691145,
+          "mode": "list",
+          "cachedResultName": "Roll Number",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1AH_WzQSyy90pJRGoZHrk8RP5KUUCHdTkfmvEMvA7IUo/edit#gid=1257691145"
+        },
+        "options": {}
+      },
+      "id": "229dd40a-40db-4af8-8ef3-ff27c5ceb4f6",
+      "name": "Roll Number",
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        384,
+        192
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4OD3d5vG4K5VPAAZ",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Class info": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Major": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "State": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Roll Number": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "94436917-fb80-4da0-9dde-c48cd7b96931",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3f511f8547792a0f6841ec9765f900b9aaa826bc29bf9153505877a03301c8f7"
+  },
+  "nodeGroups": [],
+  "id": "1RvcFCeUum7BO9Dz",
+  "tags": []
+}
